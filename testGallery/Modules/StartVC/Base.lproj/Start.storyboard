@@ -2,10 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -86,79 +86,27 @@
                         <outlet property="imageView" destination="H2P-03-F0T" id="Hsg-r7-ylH"/>
                         <outlet property="makePhotoButton" destination="VXH-5C-dHV" id="P4K-8o-ihJ"/>
                         <outlet property="saveButton" destination="oCC-k4-IsP" id="hX3-GA-ZLl"/>
-                        <segue destination="DaD-YZ-mTq" kind="show" identifier="FirstSeque" id="93s-4Y-Q3J"/>
+                        <segue destination="YfL-1g-9VY" kind="show" identifier="FirstSeque" id="3z8-Hn-mfm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="14" y="104"/>
         </scene>
-        <!--Gallery View Controller-->
-        <scene sceneID="K6x-8g-xSs">
+        <!--GalleryViewController-->
+        <scene sceneID="Sdy-T2-6fk">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="DaD-YZ-mTq" customClass="GalleryViewController" customModule="testGallery" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6PW-9v-wjW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4rd-Uk-rNp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lZT-am-viH">
-                                    <size key="itemSize" width="262" height="260"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="h4g-l1-hDA" customClass="PhotoCollectionViewCell" customModule="testGallery" customModuleProvider="target">
-                                        <rect key="frame" x="76" y="0.0" width="262" height="260"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FMf-jT-k6x">
-                                            <rect key="frame" x="0.0" y="0.0" width="262" height="260"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IG2-va-ge9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="262" height="260"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="262" height="260"/>
-                                        <connections>
-                                            <outlet property="imageView" destination="IG2-va-ge9" id="Oth-He-FIj"/>
-                                            <segue destination="VEq-gv-1QS" kind="unwind" identifier="unwindSegue" unwindAction="unwindSegueToStartVC:" id="Zu4-XJ-Q1H"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Ub-oM-juZ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Ub-oM-juZ" firstAttribute="trailing" secondItem="4rd-Uk-rNp" secondAttribute="trailing" id="2SA-HU-yjD"/>
-                            <constraint firstItem="4rd-Uk-rNp" firstAttribute="leading" secondItem="6Ub-oM-juZ" secondAttribute="leading" id="9zw-by-aAz"/>
-                            <constraint firstItem="4rd-Uk-rNp" firstAttribute="top" secondItem="6Ub-oM-juZ" secondAttribute="top" id="D8w-Z8-VKB"/>
-                            <constraint firstItem="6Ub-oM-juZ" firstAttribute="bottom" secondItem="4rd-Uk-rNp" secondAttribute="bottom" id="ar7-1F-7rE"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="aOl-qm-PaM"/>
-                    <connections>
-                        <outlet property="collectionView" destination="4rd-Uk-rNp" id="fE4-cL-2J7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9mf-q4-CNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="VEq-gv-1QS" userLabel="Exit" sceneMemberID="exit"/>
+                <viewControllerPlaceholder storyboardIdentifier="GalleryViewController" storyboardName="Gallery" referencedIdentifier="GalleryViewController" id="YfL-1g-9VY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mfH-XQ-nLA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ip1-nT-G54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771.01449275362324" y="103.79464285714285"/>
+            <point key="canvasLocation" x="891" y="104"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="placeholderTextColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,6 +7,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak private var makePhotoButton: UIButton!
     @IBOutlet weak private var galleryButton: UIButton!
     @IBOutlet weak private var saveButton: UIButton!
+    
     private let pickerController = UIImagePickerController()
     
      enum ImageSource {
